@@ -1,2 +1,1 @@
-# simple_shell
-Repo for Simple Shell Project
+0x16. C - Simple Shell Project
