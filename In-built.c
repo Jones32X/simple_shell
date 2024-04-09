@@ -16,7 +16,7 @@ int _myexit(char *line)
 	{
 		while (exit_lin[x])
 		{
-			if (exit_lin[x] != lin[x])
+			if (exit_lin[x] != line[x])
 				return (1);
 			x++;
 		}

@@ -1,4 +1,5 @@
 #include "simple.h"
+
 /**
  * _link - built linked list with directories
  * @a: PATH

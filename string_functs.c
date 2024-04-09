@@ -1,9 +1,11 @@
-#include "holberton.h"
+#include "simple.h"
+
 /**
  * _strlen - find the length of a string
  * @s: entry string
  * Return: number of bytes
  **/
+
 int _strlen(char *s)
 {
 	int i;
@@ -13,6 +15,7 @@ int _strlen(char *s)
 	}
 	return (i);
 }
+
 /**
  * _strcat - concatenate directories with the 1st position of the array
  * @directory: directories
