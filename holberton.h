@@ -1,5 +1,5 @@
-#ifndef _SIMPLE_H_
-#define _SIMPLE_H_
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
 
 #include <stdio.h>
 #include <unistd.h>
@@ -15,25 +15,20 @@
 #ifndef BUFF_SIZE
 #define BUFF_SIZE 300
 #endif
-
 /**
  * struct link - node that contains the directories
  * @dir: directory
  * @next: position to change the node
  */
-
 typedef struct link
-{
-	char *dir;
-	struct link *next;
+{char *dir;
+struct link *next;
 } link_t;
-
 /**
 * struct formats - struct formats
-* @ch: points to 1st element.
-* @func: associated function
+* @ch: pointer to firts element.
+* @func: The function associated.
 */
-
 typedef struct formats
 	{
 		char *ch;
