@@ -1,11 +1,9 @@
-#include "simple.h"
-
+#include "holberton.h"
 /**
  * _strlen - find the length of a string
  * @s: entry string
  * Return: number of bytes
  **/
-
 int _strlen(char *s)
 {
 	int i;
@@ -15,7 +13,6 @@ int _strlen(char *s)
 	}
 	return (i);
 }
-
 /**
  * _strcat - concatenate directories with the 1st position of the array
  * @directory: directories
@@ -23,13 +20,10 @@ int _strlen(char *s)
  * @arg: array of commands.
  * Return: str
  **/
-
 char *_strcat(char *directory, char *slash, char *arg)
 {
 	char *str = NULL;
-	int l1;
-	int l2;
-	int i, k;
+	int l1, l2, i, k;
 
 	l1 = _strlen(directory);
 	l2 = _strlen(arg);
@@ -45,14 +39,12 @@ char *_strcat(char *directory, char *slash, char *arg)
 	str[k + i] = '\0';
 	return (str);
 }
-
 /**
- * _strtok - breaks string into a sequence
+ * _strtok - breaks a string into a sequence
  * @str: string
- * @delim: specific character for breaking  string
+ * @delim: specific character to break the string
  * Return: NULL if fails or pointer to divided string.
  */
-
 char *_strtok(char *str, char *delim)
 {
 	int i = 0, j = 0, a = 0;
@@ -95,32 +87,26 @@ char *_strtok(char *str, char *delim)
 		tracker = NULL;
 	return (str + j);
 }
-
 /**
- * *_strcpy - copies  string pointed to another pointer
- * @src: OG pointer
- * @dest: pointer destination
- * Return: A pointer character
+ * *_strcpy - copies the string pointed to another pointer
+ * @src: original pointer
+ * @dest: destination pointer
+ * Return: return a pointer char
  */
-
 char *_strcpy(char *dest, char *src)
 {
-	int x = 0;
+	int a, b;
 
-	int z;
-
-	z = 0;
-
-	for (; src[x] != '\0' ; x++)
+	for (a = 0; src[a] != '\0' ; a++)
 	{
 	}
-	for (z = 0; z < x ; z++)
+	for (b = 0; b < a ; b++)
 	{
-		dest[z] = src[z];
+		dest[b] = src[b];
 	}
-	for (; z <= x ; z++)
+	for (; b <= a ; b++)
 	{
-		dest[z] = '\0';
+		dest[b] = '\0';
 	}
 	return (dest);
 }

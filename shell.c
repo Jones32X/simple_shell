@@ -1,18 +1,14 @@
-#include "simple.h"
-
+#include "holberton.h"
 /**
- * main - Shell entry point
- * @argc: arguments amount
- * @argv: arguments string
- * @env: enviromet var
- * Return: 0 Return value
+ * main - Entry point for shell
+ * @argc: Number of arguments
+ * @argv: string of arguments
+ * @env: enviromet variable
+ * Return: 0 (Return value)
  */
-
 int main(int __attribute__((unused))argc, char **argv, char **env)
 {
-	int status_output = 0;
-	int read = 1;
-	int counter = 0;
+	int status_output = 0, read = 1, counter = 0;
 
 	while (read)
 	{

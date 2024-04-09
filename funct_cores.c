@@ -1,11 +1,9 @@
-#include "simple.h"
-
+#include "holberton.h"
 /**
- * _getenv - finds the environment var.
- * @name: var name
+ * _getenv - find the env vari. name
+ * @name: variable name
  * Return: NULL if fails or pointer to value of env.var.
  */
-
 char *_getenv(const char *name)
 {
 	int i;
@@ -32,7 +30,6 @@ char *_getenv(const char *name)
 	}
 	return (NULL);
 }
-
 /**
  * _getline - get line command line from the prompt
  * @bufline: command buffer line string.
@@ -40,7 +37,6 @@ char *_getenv(const char *name)
  * @std: file stream where comes the command buffer line.
  * Return: number of bytes copied in the buffer.
  **/
-
 ssize_t _getline(char **bufline, size_t *size, FILE *std)
 {
 	size_t count = 0;
@@ -72,13 +68,11 @@ ssize_t _getline(char **bufline, size_t *size, FILE *std)
 	(*bufline)[count] = '\0';
 	return (count);
 }
-
 /**
 * splitline - get line command line from the prompt
 * @command_line: command line string.
 * Return: a pointer to string of command strings.
 **/
-
 char **splitline(char *command_line)
 {
 	char **ptrstr;
@@ -98,7 +92,6 @@ char **splitline(char *command_line)
 	ptrstr[position] = NULL;
 	return (ptrstr);
 }
-
 /**
  * execute_process - execute process function
  * @argm: arguments from command_line
@@ -106,7 +99,6 @@ char **splitline(char *command_line)
  * @counter: number of ecution processes
  * Return: 0 (Success) -1 (Failed)
  **/
-
 int execute_process(char **argm, char **argv, int counter)
 {
 	pid_t child_process;
@@ -145,14 +137,12 @@ int execute_process(char **argm, char **argv, int counter)
 
 	return (status_output);
 }
-
 /**
  * _which - search ofr a command in the directories
  * @head: head
  * @av: arguments
  * Return: path of a command or nil
  **/
-
 char *_which(link_t **head, char *av)
 {
 	link_t *pusher = *head;

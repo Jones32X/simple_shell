@@ -1,12 +1,9 @@
-#include "simple.h"
-
+#include "holberton.h"
 /**
- * check_path - checks if argumnt is a path already
+ * check_path - check if argumnt is already a path
  * @argm: entry argument
- * Return: argm (Success) otherwise
- * NULL (Not found)
+ * Return: argm (Success) NULL (Not found)
  */
-
 char *check_path(char *argm)
 {
 	if (access(argm, X_OK) == 0)
@@ -15,12 +12,10 @@ char *check_path(char *argm)
 }
 
 /**
- * execute_command - checks if argumnt is already a path
+ * execute_command - check if argumnt is already a path
  * @argm: entry argument
- * Return: argm (Success) else
- * NULL (Not found)
+ * Return: argm (Success) NULL (Not found)
  */
-
 char *execute_command(char *argm)
 {
 	char *path = NULL;
