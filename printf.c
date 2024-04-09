@@ -1,4 +1,5 @@
-#include "holberton.h"
+#include "simple.h"
+
 /**
 * _putchar - writes the character c to stdout
 * @c: The character to print
@@ -10,21 +11,25 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
 /**
 * p_char - writes the character c to stdout.
-* @arguments: The character to print
+* @arguments: char for printing
 * Return: integer.
 */
+
 int p_char(va_list arguments)
 {
 	_putchar(va_arg(arguments, int));
 	return (1);
 }
+
 /**
-* p_int - print variable type integer.
+* p_int - prints var type integer.
 * @arguments: arguments
-* Return: Integer.
+* Return: Int.
 */
+
 int p_int(va_list arguments)
 {
 	long int n, n_aux, d = 1, l_aux;
@@ -54,11 +59,13 @@ int p_int(va_list arguments)
 	}
 	return (count);
 }
+
 /**
 * p_str - print variable type string.
 * @arguments: number of arguments.
 * Return: Integer.
 */
+
 int p_str(va_list arguments)
 {
 	char *p;
@@ -82,6 +89,7 @@ int p_str(va_list arguments)
 * @format: arguments
 * Return: length of all characters
 */
+
 int _printf(const char *format, ...)
 {
 form types[] = {

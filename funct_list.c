@@ -1,28 +1,31 @@
-#include "holberton.h"
+#include "simple.h"
 /**
  * _link - built linked list with directories
  * @a: PATH
  * Return: head
  **/
+
 link_t *_link(char *a)
 {
 	link_t *head = NULL;
-	char *token;
+	char *TOKEN;
 
-	token = _strtok(a, ":");
-	while (token != NULL)
+	TOKEN = _strtok(a, ":");
+	while (TOKEN != NULL)
 	{
-		head = _add_nodeint_end(&head, token);
-		token = _strtok(NULL, ":");
+		head = _add_nodeint_end(&head, TOKEN);
+		TOKEN = _strtok(NULL, ":");
 	}
 	return (head);
 }
+
 /**
- * _add_nodeint_end - add a new string to a node at the end
+ * _add_nodeint_end - adds new string to end node
  * @head: head
  * @n: directories
  * Return: head
  **/
+
 link_t *_add_nodeint_end(link_t **head, char *n)
 {
 	link_t *new_node;
@@ -48,10 +51,12 @@ link_t *_add_nodeint_end(link_t **head, char *n)
 	}
 	return (*head);
 }
+
 /**
  * free_list - frees a list_t list
- * @head: head of a node
+ * @head: node head
  */
+
 void free_list(link_t *head)
 {
 	link_t *temp;

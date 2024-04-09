@@ -20,10 +20,13 @@ int _strlen(char *s)
  * @arg: array of commands.
  * Return: str
  **/
+
 char *_strcat(char *directory, char *slash, char *arg)
 {
 	char *str = NULL;
-	int l1, l2, i, k;
+	int l1;
+	int l2;
+	int i, k;
 
 	l1 = _strlen(directory);
 	l2 = _strlen(arg);
@@ -39,12 +42,14 @@ char *_strcat(char *directory, char *slash, char *arg)
 	str[k + i] = '\0';
 	return (str);
 }
+
 /**
- * _strtok - breaks a string into a sequence
+ * _strtok - breaks string into a sequence
  * @str: string
- * @delim: specific character to break the string
+ * @delim: specific character for breaking  string
  * Return: NULL if fails or pointer to divided string.
  */
+
 char *_strtok(char *str, char *delim)
 {
 	int i = 0, j = 0, a = 0;
@@ -87,26 +92,32 @@ char *_strtok(char *str, char *delim)
 		tracker = NULL;
 	return (str + j);
 }
+
 /**
- * *_strcpy - copies the string pointed to another pointer
- * @src: original pointer
- * @dest: destination pointer
- * Return: return a pointer char
+ * *_strcpy - copies  string pointed to another pointer
+ * @src: OG pointer
+ * @dest: pointer destination
+ * Return: A pointer character
  */
+
 char *_strcpy(char *dest, char *src)
 {
-	int a, b;
+	int x = 0;
 
-	for (a = 0; src[a] != '\0' ; a++)
+	int z;
+
+	z = 0;
+
+	for (; src[x] != '\0' ; x++)
 	{
 	}
-	for (b = 0; b < a ; b++)
+	for (z = 0; z < x ; z++)
 	{
-		dest[b] = src[b];
+		dest[z] = src[z];
 	}
-	for (; b <= a ; b++)
+	for (; z <= x ; z++)
 	{
-		dest[b] = '\0';
+		dest[z] = '\0';
 	}
 	return (dest);
 }

@@ -1,26 +1,28 @@
-#include "holberton.h"
+#include "simple.h"
 
 /**
- * _getchar - get each character of the line command
- * Return: command line or EOF.
+ * _getchar - obtain each char of the command line
+ * Return: cmd line or EOF.
  **/
+
 int _getchar(void)
 {
 	static unsigned char buff[BUFF_SIZE];
-	static int index;
-	static int count;
+	static int counts;
+	static int indeX;
 
-	index = 0;
-	count = 0;
-	if (index >= count)
+	indeX = 0;
+	counts = 0;
+
+	if (indeX >= counts)
 	{
-		index = 0;
-		count = read(STDIN_FILENO, buff, BUFF_SIZE);
-		printf("%i\n", count);
-		if (count == 0)
+		indeX = 0;
+		counts = read(STDIN_FILENO, buff, BUFF_SIZE);
+		printf("%i\n", counts);
+		if (counts == 0)
 			return (EOF);
-		if (count < 0)
+		if (counts < 0)
 			return (EOF);
 	}
-	return (buff[index++]);
+	return (buff[indeX++]);
 }
