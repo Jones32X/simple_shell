@@ -1,9 +1,11 @@
-#include "holberton.h"
+#include "simple.h"
+
 /**
  * _link - built linked list with directories
  * @a: PATH
  * Return: head
  **/
+
 link_t *_link(char *a)
 {
 	link_t *head = NULL;

@@ -1,9 +1,11 @@
-#include "holberton.h"
+#include "simple.h"
+
 /**
  * _getenv - find the env vari. name
  * @name: variable name
  * Return: NULL if fails or pointer to value of env.var.
- */
+*/
+
 char *_getenv(const char *name)
 {
 	int i;

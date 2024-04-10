@@ -1,9 +1,11 @@
-#include "holberton.h"
+#include "simple.h"
+
 /**
  * check_path - check if argumnt is already a path
  * @argm: entry argument
  * Return: argm (Success) NULL (Not found)
  */
+
 char *check_path(char *argm)
 {
 	if (access(argm, X_OK) == 0)
