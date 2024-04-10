@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "simple.h"
 
 /**
  * _getchar - get each character of the line command

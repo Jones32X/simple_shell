@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "simple.h"
 
 /**
  * _myexit - check command line to exit shell
