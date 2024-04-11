@@ -122,7 +122,7 @@ char *_strcpy(char *dest, char *src)
 	for (v = 0; src[v] != '\0' ; v++)
 	{
 	}
-	for (W = 0; b < v ; W++)
+	for (W = 0; W < v ; W++)
 	{
 		dest[W] = src[W];
 	}
