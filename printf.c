@@ -2,9 +2,9 @@
 
 /**
 * _putchar - writes the character c to stdout
-* @c: The character to print
+* @c: Character for printing
 * Return: On success 1.
-* On error, -1 is returned, and errno is set appropriately.
+* On error, -1 is returned, and errno appropriately set.
 */
 
 int _putchar(char c)
@@ -15,18 +15,21 @@ int _putchar(char c)
 /**
 * p_char - writes the character c to stdout.
 * @arguments: The character to print
-* Return: integer.
+* Return: int.
 */
+
 int p_char(va_list arguments)
 {
 	_putchar(va_arg(arguments, int));
 	return (1);
 }
+
 /**
-* p_int - print variable type integer.
+* p_int - print var type int
 * @arguments: arguments
-* Return: Integer.
+* Return: Int
 */
+
 int p_int(va_list arguments)
 {
 	long int n, n_aux, d = 1, l_aux;
@@ -56,15 +59,17 @@ int p_int(va_list arguments)
 	}
 	return (count);
 }
+
 /**
-* p_str - print variable type string.
+* p_str - var string type.
 * @arguments: number of arguments.
-* Return: Integer.
+* Return: Int.
 */
+
 int p_str(va_list arguments)
 {
 	char *p;
-	int a;
+	int ax = 0;
 
 	p = va_arg(arguments, char *);
 	if (p == NULL)
@@ -72,24 +77,28 @@ int p_str(va_list arguments)
 		write(1, "(null)", 6);
 		return (6);
 	}
-	for (a = 0 ; p[a] != '\0' ; a++)
+	for (; p[ax] != '\0' ; ax++)
 	{
-	_putchar(p[a]);
+	_putchar(p[ax]);
 	}
-	return (a);
+	return (ax);
 }
 
 /**
 * _printf - print c,s,f,u,i,d
 * @format: arguments
-* Return: length of all characters
+* Return: all char's length
 */
+
 int _printf(const char *format, ...)
 {
 form types[] = {
 	{"c", p_char}, {"s", p_str}, {"d", p_int}, {"i", p_int}, {NULL, NULL}};
 	va_list arguments;
-	int pos = 0, length = 0, pos_form;
+	int pos = 0;
+	int length, pos_form;
+
+	length = 0;
 
 	va_start(arguments, format);
 	if (!format || !format[pos])

@@ -19,12 +19,14 @@ link_t *_link(char *a)
 	}
 	return (head);
 }
+
 /**
- * _add_nodeint_end - add a new string to a node at the end
+ * _add_nodeint_end - adds a new str to end node
  * @head: head
  * @n: directories
  * Return: head
  **/
+
 link_t *_add_nodeint_end(link_t **head, char *n)
 {
 	link_t *new_node;
@@ -50,10 +52,12 @@ link_t *_add_nodeint_end(link_t **head, char *n)
 	}
 	return (*head);
 }
+
 /**
  * free_list - frees a list_t list
- * @head: head of a node
+ * @head: node head
  */
+
 void free_list(link_t *head)
 {
 	link_t *temp;

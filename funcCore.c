@@ -41,9 +41,11 @@ char *_getenv(const char *name)
  **/
 ssize_t _getline(char **bufline, size_t *size, FILE *std)
 {
-	size_t count = 0;
+	size_t count;
 	size_t alloc = 1024;
 	char c;
+
+	count = 0;
 
 	if (!bufline || !size || !std)
 		return (-1);
