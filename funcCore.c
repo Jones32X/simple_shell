@@ -78,9 +78,12 @@ ssize_t _getline(char **bufline, size_t *size, FILE *std)
 char **splitline(char *command_line)
 {
 	char **ptrstr;
-	int size = 100;
-	int position = 0;
+	int size;
+	int pos;
 	char *word;
+
+	pos = 0;
+	size = 100;
 
 	ptrstr = malloc(sizeof(char *) * size);
 	if (ptrstr == NULL)
@@ -88,24 +91,30 @@ char **splitline(char *command_line)
 	word = _strtok(command_line, " ");
 	while (word != NULL)
 	{
-		ptrstr[position++] = word;
+		ptrstr[pos++] = word;
 		word = _strtok(NULL, " ");
 	}
-	ptrstr[position] = NULL;
+	ptrstr[pos] = NULL;
 	return (ptrstr);
 }
+
 /**
- * execute_process - execute process function
- * @argm: arguments from command_line
+ * execute_process - proces function execute
+ * @argm: arguments from line of command
  * @argv: string of arguments
  * @counter: number of ecution processes
  * Return: 0 (Success) -1 (Failed)
  **/
+
 int execute_process(char **argm, char **argv, int counter)
 {
 	pid_t child_process;
-	int status, status_output = 0;
-	char *buffer = NULL, *command_path = NULL;
+	int status_output;
+	int status;
+	char *buffer = NULL;
+	char *command_path = NULL;
+
+	status_output = 0;
 
 	command_path = check_path(argm[0]);
 	if (command_path == NULL)
