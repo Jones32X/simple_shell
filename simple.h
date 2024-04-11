@@ -15,20 +15,24 @@
 #ifndef BUFF_SIZE
 #define BUFF_SIZE 300
 #endif
+
 /**
- * struct link - node that contains the directories
+ * struct link - node containing directories
  * @dir: directory
- * @next: position to change the node
+ * @next: pos for node change
  */
+
 typedef struct link
 {char *dir;
 struct link *next;
 } link_t;
+
 /**
 * struct formats - struct formats
-* @ch: pointer to firts element.
-* @func: The function associated.
+* @ch: points to 1st element.
+* @func:associated func
 */
+
 typedef struct formats
 	{
 		char *ch;
@@ -61,4 +65,5 @@ void free_list(link_t *head);
 char *check_path(char *argm);
 int _myenv(char *line, int counter, char **argv, char **env);
 int _getchar(void);
+
 #endif
