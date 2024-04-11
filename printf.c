@@ -95,10 +95,7 @@ int _printf(const char *format, ...)
 form types[] = {
 	{"c", p_char}, {"s", p_str}, {"d", p_int}, {"i", p_int}, {NULL, NULL}};
 	va_list arguments;
-	int pos = 0;
-	int length, pos_form;
-
-	length = 0;
+	int len = 0, pos = 0, pos_form;
 
 	va_start(arguments, format);
 	if (!format || !format[pos])
@@ -110,28 +107,28 @@ form types[] = {
 			if (format[pos + 1] == '\0')
 				return (-1);
 			if (format[pos + 1] == '%')
-				_putchar(37), length++;
+				_putchar(37), len++;
 			else
 			{
 				for (pos_form = 0; types[pos_form].ch != NULL; pos_form++)
 				{
 					if (types[pos_form].ch[0] == format[pos + 1])
 					{
-						length += types[pos_form].func(arguments);
+						len += types[pos_form].func(arguments);
 						break;
 					}
 				}
 				if (types[pos_form].ch == NULL)
 				{
 					_putchar(format[pos]);
-					_putchar(format[pos + 1]), length += 2;
+					_putchar(format[pos + 1]), len += 2;
 				}
 			}
 			pos++;
 		}
 		else
-			_putchar(format[pos]), length++;
+			_putchar(format[pos]), len++;
 	}
 	va_end(arguments);
-	return  (length);
+	return  (len);
 }

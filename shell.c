@@ -10,13 +10,9 @@
 
 int main(int __attribute__((unused))argc, char **argv, char **env)
 {
-	int status_output, read, counter;
+	int status_output = 0, rd = 1, cnter = 0;
 
-	read = 1;
-	counter = 0;
-	status_output = 0;
-
-	while (read)
+	while (rd)
 	{
 		char *command_line = NULL, **argm = NULL;
 		size_t line_size = 0;
@@ -24,24 +20,24 @@ int main(int __attribute__((unused))argc, char **argv, char **env)
 		if (isatty(STDIN_FILENO) == 1)
 			write(STDOUT_FILENO, "#cisfun$ ", 10);
 		signal(SIGINT, signal_c);
-		read = getline(&command_line, &line_size, stdin);
-		if (read < 0)
+		rd = getline(&command_line, &line_size, stdin);
+		if (rd < 0)
 		{
 			free(command_line);
 			exit(status_output);
 		}
-		if (read == 1)
+		if (rd == 1)
 		{
 			free(command_line);
 			continue;
 		}
-		if (read != EOF)
+		if (rd != EOF)
 		{
-			counter++;
+			cnter++;
 			_strtok(command_line, "\n");
 			if (_myexit(command_line) == 0)
 				return (status_output);
-			if (_myenv(command_line, counter, argv, env) == 0)
+			if (_myenv(command_line, cnter, argv, env) == 0)
 				continue;
 			argm = splitline(command_line);
 			if (argm[0] == NULL)
@@ -49,7 +45,7 @@ int main(int __attribute__((unused))argc, char **argv, char **env)
 				free(command_line), free(argm);
 				continue;
 			}
-			status_output = execute_process(argm, argv, counter);
+			status_output = execute_process(argm, argv, cnter);
 		}
 		free(command_line), free(argm);
 	}

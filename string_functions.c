@@ -59,76 +59,69 @@ char *_strcat(char *directory, char *slash, char *arg)
 
 char *_strtok(char *str, char *delim)
 {
-	int i;
-	int j;
-	int a;
+	int K = 0, B = 0, TV = 0;
 	static char *tracker;
-
-	j = 0;
-	a = 0;
-	i = 0;
 
 	if (!delim || (!str && !tracker))
 		return (NULL);
 	str == NULL ? str = tracker : str;
-	for (; str[j] == ' ' ; j++)
+	for (; str[B] == ' ' ; B++)
 	{
-		if (str[j + 1] == '\0')
+		if (str[B + 1] == '\0')
 			return (NULL);
 	}
-	for (i = j ; str[i] != '\0' ; i++)
+	for (K = B ; str[K] != '\0' ; K++)
 	{
-		if (str[i] == *delim)
+		if (str[K] == *delim)
 		{
-			a = 1;
+			TV = 1;
 			break;
 		}
 	}
-	for (; str[i] != '\0' ; i++)
-		if (str[i] != delim[0])
+	for (; str[K] != '\0' ; K++)
+		if (str[K] != delim[0])
 			break;
-		else if (str[i + 1] == '\0')
+		else if (str[K + 1] == '\0')
 		{
-			a = 0, str[i] = '\0';
+			TV = 0, str[K] = '\0';
 			break;
 		}
 		else
-			str[i] = '\0';
-	if (a == 0)
+			str[K] = '\0';
+	if (TV == 0)
 	{
 		tracker = NULL;
-		return (str + j);
+		return (str + B);
 	}
-	if (str + i)
-		tracker = str + i;
+	if (str + K)
+		tracker = str + K;
 	else
 		tracker = NULL;
-	return (str + j);
+	return (str + B);
 }
+
 /**
  * *_strcpy - copies the string pointed to another pointer
  * @src: original pointer
  * @dest: pointer destination
  * Return: return a pointer char
-
 */
+
 char *_strcpy(char *dest, char *src)
 {
-	int v = 0;
-	int W;
+	int Aa = 0;
+	int Boa = 0;
 
-	W = 0;
-
-	for (v = 0; src[v] != '\0' ; v++)
+	for (Aa = 0; src[Aa] != '\0' ; Aa++)
 	{
 	}
-	for (W = 0; W < v ; W++)
+	for (Boa = 0; Boa < Aa ; Boa++)
 	{
-		dest[W] = src[W];
+		dest[Boa] = src[Boa];
 	}
-	for (; W <= v ; W++)
+	for (; Boa <= Aa ; Boa++)
 	{
-		dest[W] = '\0';
+		dest[Boa] = '\0';
 	}
 	return (dest);
 }
