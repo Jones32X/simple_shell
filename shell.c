@@ -4,13 +4,17 @@
  * main - Entry point for shell
  * @argc: Number of arguments
  * @argv: string of arguments
- * @env: enviromet variable
+ * @env: enviromet var
  * Return: 0 (Return value)
  */
 
 int main(int __attribute__((unused))argc, char **argv, char **env)
 {
-	int status_output = 0, read = 1, counter = 0;
+	int status_output, read, counter;
+
+	read = 1;
+	counter = 0;
+	status_output = 0;
 
 	while (read)
 	{

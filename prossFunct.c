@@ -3,7 +3,7 @@
 /**
  * check_path - check if argumnt is already a path
  * @argm: entry argument
- * Return: argm (Success) NULL (Not found)
+ * Return: argm (Success) else NULL (Not found)
  */
 
 char *check_path(char *argm)
@@ -14,10 +14,12 @@ char *check_path(char *argm)
 }
 
 /**
- * execute_command - check if argumnt is already a path
+ * execute_command - checks if argument is a path already
  * @argm: entry argument
- * Return: argm (Success) NULL (Not found)
+ * Return: argm (on success)
+ * else NULL /Not found
  */
+
 char *execute_command(char *argm)
 {
 	char *path = NULL;

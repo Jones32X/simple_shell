@@ -8,25 +8,31 @@
 
 int _strlen(char *s)
 {
-	int i;
+	int L;
 
-	for (i = 0; s[i]; i++)
+	L = 0;
+
+	for (; s[L]; L++)
 	{
 	}
-	return (i);
+	return (L);
 }
 
 /**
- * _strcat - concatenate directories with the 1st position of the array
+ * _strcat - concatenate directories with first position of the array
  * @directory: directories
  * @slash: /
  * @arg: array of commands.
- * Return: str
+ * Return: string
  **/
+
 char *_strcat(char *directory, char *slash, char *arg)
 {
 	char *str = NULL;
-	int l1, l2, i, k;
+	int l1;
+	int l2;
+	int i;
+	int k;
 
 	l1 = _strlen(directory);
 	l2 = _strlen(arg);
@@ -42,16 +48,25 @@ char *_strcat(char *directory, char *slash, char *arg)
 	str[k + i] = '\0';
 	return (str);
 }
+
 /**
- * _strtok - breaks a string into a sequence
+ * _strtok - breaks a str into sequence
  * @str: string
- * @delim: specific character to break the string
- * Return: NULL if fails or pointer to divided string.
+ * @delim: specific char to break the string
+ * Return: NULL if fails otherwise
+ * point to divided string.
  */
+
 char *_strtok(char *str, char *delim)
 {
-	int i = 0, j = 0, a = 0;
+	int i;
+	int j;
+	int a;
 	static char *tracker;
+
+	j = 0;
+	a = 0;
+	i = 0;
 
 	if (!delim || (!str && !tracker))
 		return (NULL);
@@ -93,23 +108,27 @@ char *_strtok(char *str, char *delim)
 /**
  * *_strcpy - copies the string pointed to another pointer
  * @src: original pointer
- * @dest: destination pointer
+ * @dest: pointer destination
  * Return: return a pointer char
- */
+
+*/
 char *_strcpy(char *dest, char *src)
 {
-	int a, b;
+	int v = 0;
+	int W;
 
-	for (a = 0; src[a] != '\0' ; a++)
+	W = 0;
+
+	for (v = 0; src[v] != '\0' ; v++)
 	{
 	}
-	for (b = 0; b < a ; b++)
+	for (W = 0; b < v ; W++)
 	{
-		dest[b] = src[b];
+		dest[W] = src[W];
 	}
-	for (; b <= a ; b++)
+	for (; W <= v ; W++)
 	{
-		dest[b] = '\0';
+		dest[W] = '\0';
 	}
 	return (dest);
 }
