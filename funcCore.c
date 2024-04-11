@@ -8,18 +8,18 @@
 
 char *_getenv(const char *name)
 {
-	int i;
-	int j;
+	int b = 0;
+	int i = 0;
 	char *a;
 	char *copy;
 
-	for (i = 0 ; environ[i] != NULL ; i++)
+	for (; environ[i] != NULL ; i++)
 	{
-		for (j = 0 ; name[j] == environ[i][j] && name[j] != '\0' ; j++)
+		for (; name[b] == environ[i][b] && name[b] != '\0' ; b++)
 		{
-			if (name[j + 1] == '\0')
+			if (name[b + 1] == '\0')
 			{
-				a = &environ[i][j + 2];
+				a = &environ[i][b + 2];
 				copy = malloc(sizeof(char) * _strlen(a) + 1);
 
 				if (!copy)
@@ -139,12 +139,14 @@ int execute_process(char **argm, char **argv, int counter)
 
 	return (status_output);
 }
+
 /**
- * _which - search ofr a command in the directories
+ * _which - search  command in the directories
  * @head: head
  * @av: arguments
- * Return: path of a command or nil
+ * Return: path of a command or null
  **/
+
 char *_which(link_t **head, char *av)
 {
 	link_t *pusher = *head;
